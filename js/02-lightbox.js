@@ -6,9 +6,9 @@ console.log(galleryItems);
 // Создание и рендер разметки по массиву данных galleryItems и предоставленному шаблону элемента галереи. Используй готовый код из первого задания.
 const gallery = document.querySelector('.gallery');
 const makeGallery = galleryItems.map(({ preview, original, description }) => {
-    return `<a class="gallery__item" href="${original}">
+    return `<li> <a class="gallery__item" href="${original}">
   <img class="gallery__image" src="${preview}" alt="${description}" />
-</a>`}).join(" ");
+</a> </li>`}).join(" ");
 
 
 gallery.insertAdjacentHTML("beforeend", makeGallery);

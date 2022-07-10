@@ -22,7 +22,10 @@ const makeGallery = galleryItems.map(({ preview, original, description}) => {
 gallery.insertAdjacentHTML("beforeend", makeGallery);
 
 // Открытие модального окна по клику на элементе галереи. Для этого ознакомься с документацией и примерами.
-    gallery.addEventListener('click', openModal)
+gallery.addEventListener('click', openModal);
+
+
+
 
 // Реализация делегирования на div.gallery и получение url большого изображения.
 
@@ -38,14 +41,18 @@ function openModal(event) {
 
     instance.show();
     window.addEventListener('keydown', onEscPress);
+   
+    console.log("есть");
     
 
     // Закрытие по escape
 
     function closeModal() {
         window.removeEventListener('keydown', onEscPress);
+        
     
         instance.close();
+        console.log("нет")
     }
 
     function onEscPress(event) {
@@ -53,8 +60,9 @@ function openModal(event) {
             closeModal();
         
         }
-    
+        
     }
 }
+
   // Подключение скрипта и стилей библиотеки модального окна basicLightbox. Используй CDN сервис jsdelivr и добавь в проект ссылки на минифицированные (.min) файлы библиотеки.
     // в html 
